@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #07040d;
+    --bg-secondary: #0d061a;
+    --bg-card: #120924;
+    --bg-card-hover: #1b0d36;
+    --bg-muted: #180c30;
+    --border-color: rgba(168, 85, 247, 0.25);
+    --border-hover: rgba(192, 132, 252, 0.5);
+    --text-primary: #f8fafc;
+    --text-secondary: #d8b4fe;
+    --text-muted: #a855f7;
+    --accent-glow: rgba(168, 85, 247, 0.4);
+    --grid-line: rgba(168, 85, 247, 0.05);
+  }
+
+  html.light {
+    --bg-primary: #fbf9fe;
+    --bg-secondary: #f4effa;
+    --bg-card: #ffffff;
+    --bg-card-hover: #fcfaff;
+    --bg-muted: #ede4f7;
+    --border-color: rgba(147, 51, 234, 0.18);
+    --border-hover: rgba(147, 51, 234, 0.45);
+    --text-primary: #17072b;
+    --text-secondary: #4c1d95;
+    --text-muted: #7e22ce;
+    --accent-glow: rgba(147, 51, 234, 0.2);
+    --grid-line: rgba(147, 51, 234, 0.04);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  h1, h2, h3, .font-display {
+    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Futuristic Premium Purple Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.35);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(192, 132, 252, 0.7);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(15, 8, 30, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+}
+
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(147, 51, 234, 0.15);
+  box-shadow: 0 4px 20px -2px rgba(147, 51, 234, 0.08);
+}
+
+.glass-panel-purple {
+  background: rgba(20, 10, 38, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(192, 132, 252, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(147, 51, 234, 0.15);
+}
+
+html.light .glass-panel-purple {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(147, 51, 234, 0.25);
+  box-shadow: 0 10px 30px -4px rgba(147, 51, 234, 0.12);
+}
+
+/* Grid pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+}
+
+.bg-dots-pattern {
+  background-image: radial-gradient(rgba(192, 132, 252, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+html.light .bg-dots-pattern {
+  background-image: radial-gradient(rgba(147, 51, 234, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glow effects */
+.glow-purple {
+  box-shadow: 0 0 25px -5px var(--accent-glow);
+}
+
+.glow-purple-lg {
+  box-shadow: 0 0 50px -10px var(--accent-glow);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 16px rgba(192, 132, 252, 0.6);
+}
+
+html.light .text-glow-purple {
+  text-shadow: 0 0 12px rgba(147, 51, 234, 0.25);
+}
+
+/* Cyber pulse animation */
+@keyframes cyber-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+.animate-cyber-pulse {
+  animation: cyber-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Light mode overrides for container backgrounds */
+html.light .bg-\[\#07040d\] {
+  background-color: #fbf9fe !important;
+}
+
+html.light .bg-\[\#040208\] {
+  background-color: #f4effa !important;
+}
+
+html.light .bg-\[\#090412\] {
+  background-color: #f5f0fb !important;
+}
+
+html.light .bg-\[\#0d061a\] {
+  background-color: #f0e8f7 !important;
+}
+
+html.light .bg-\[\#0e071c\] {
+  background-color: #f8f4fd !important;
+}
+
+html.light .bg-\[\#120924\] {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-\[\#100720\] {
+  background-color: #fcfaff !important;
+}
+
+html.light .bg-\[\#140a2b\] {
+  background-color: #f6f0fc !important;
+}
+
+html.light .bg-\[\#160b2e\] {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-\[\#1a0d33\] {
+  background-color: #efe6f8 !important;
+}
+
+html.light .bg-\[\#1c0e36\] {
+  background-color: #ede2f6 !important;
+}
+
+html.light .bg-\[\#180c30\] {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-\[\#1f103d\] {
+  background-color: #e9dcf5 !important;
+}
+
+html.light .bg-\[\#07040d\]\/80,
+html.light .bg-\[\#07040d\]\/90,
+html.light .bg-\[\#07040d\]\/95 {
+  background-color: rgba(251, 249, 254, 0.92) !important;
+}
+
+html.light .bg-\[\#090412\]\/80,
+html.light .bg-\[\#090412\]\/90 {
+  background-color: rgba(245, 240, 251, 0.92) !important;
+}
+
+html.light .bg-\[\#120924\]\/80,
+html.light .bg-\[\#120924\]\/90,
+html.light .bg-\[\#120924\]\/95 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Text adjustments for light mode readability */
+html.light .text-white {
+  color: #17072b !important;
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200 {
+  color: #1e0938 !important;
+}
+
+html.light .text-purple-100,
+html.light .text-purple-200,
+html.light .text-purple-300 {
+  color: #3b0764 !important;
+}
+
+html.light .text-purple-200\/70,
+html.light .text-purple-300\/70,
+html.light .text-purple-400\/60 {
+  color: #6b21a8 !important;
+}
+
+html.light .text-slate-400 {
+  color: #581c87 !important;
+}
+
+html.light .border-purple-500\/20,
+html.light .border-purple-500\/30,
+html.light .border-purple-500\/40 {
+  border-color: rgba(147, 51, 234, 0.18) !important;
+}
+
+html.light .shadow-purple-950\/40,
+html.light .shadow-purple-950\/50,
+html.light .shadow-purple-950\/60 {
+  box-shadow: 0 10px 25px -3px rgba(147, 51, 234, 0.08), 0 4px 6px -4px rgba(147, 51, 234, 0.04) !important;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "AK Digital — Futuristic Systems & Digital Product Engineering",
+  "description": "Official website for AK Digital, featuring futuristic and clean product engineering, distributed systems architecture, interactive 3D showcases, production case studies, and quantum CLI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
